@@ -88,6 +88,9 @@ alias reload="source ~/.bashrc"
 
 # Alias to clear the screen with the command 'c'
 alias c="clear"
+
+# Alias to run eza (better ls)
+alias le="eza -l"
 ```
 
 **Sudo No-Password Fix:**
@@ -120,6 +123,12 @@ sudo apt install gh
 
 # fastfetch (tool to display system logo and info)
 sudo apt install fastfetch
+
+# eza (better ls)
+sudo apt install eza
+
+# speedtest-cli (internet speed test cli)
+sudo apt install speedtest-cli
 ```
 
 ## Remote SSH Access
