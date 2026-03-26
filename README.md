@@ -15,3 +15,20 @@ git clone --recurse-submodules git@github.com:UMass-Lowell-Rocketry-Club/Cloudju
 ```
 
 If you want to edit the repository you should also read the [setup instructions](https://github.com/UMass-Lowell-Rocketry-Club/Cloudjumper-Sensors/blob/main/SUBMODULE%20MAINTENANCE.md#editing-submodules).
+
+## Setting Up The Service
+
+We use a `systemd` service to run the radio transmitter program after boot. After pulling changes to this service, there are a few commands that need to be run:
+
+```bash
+# copy the config file to the correct location
+sudo cp config_files/radio-transmitter.service /etc/systemd/system
+# tell systemd that the config file changed
+sudo systemctl daemon-reload
+# enable the radio-transmitter service at startup
+sudo systemctl enable radio-transmitter
+# start the radio-transmitter service right now (optional)
+sudo systemctl start radio-transmitter
+```
+
+You can check the status of the service with `systemctl status radio-transmitter`. If you need to, you can stop it with `systemctl stop radio-transmitter`

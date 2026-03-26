@@ -1,0 +1,11 @@
+[Unit]
+Description=Rocketry Payload Radio Transmitter
+
+[Service]
+Type=exec
+ExecStart=/home/rocketry/Cloudjumper-Payload/radio-transmitter.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+Alias=radio-transmitter.service
